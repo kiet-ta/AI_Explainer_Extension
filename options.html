@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: sans-serif; padding: 20px; width: 320px; }
+    label { display: block; margin-top: 10px; font-weight: bold; }
+    input, select { width: 100%; padding: 5px; margin-top: 5px; box-sizing: border-box; }
+    button { margin-top: 20px; width: 100%; padding: 8px; background: #0078d4; color: white; border: none; cursor: pointer; }
+    button:hover { background: #005a9e; }
+    .status { margin-top: 10px; color: green; font-size: 0.9em; height: 1.2em; }
+    .helper { font-size: 0.85em; color: #555; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <h2>Cấu hình AI</h2>
+  
+  <label for="provider">Chọn AI Provider:</label>
+  <select id="provider">
+    <option value="gemini">Google Gemini</option>
+    <option value="openai">OpenAI (ChatGPT)</option>
+  </select>
+
+  <div id="gemini-config">
+    <label for="geminiKey">Gemini API Key:</label>
+    <input type="password" id="geminiKey" placeholder="Enter Gemini API Key">
+    <div class="helper">Đăng ký tại <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a>.</div>
+  </div>
+
+  <div id="openai-config" style="display:none;">
+    <label for="openaiKey">OpenAI API Key:</label>
+    <input type="password" id="openaiKey" placeholder="Enter OpenAI API Key">
+    <label for="openaiModel">Model:</label>
+    <input type="text" id="openaiModel" value="gpt-3.5-turbo">
+    <div class="helper">Tham khảo <a href="https://platform.openai.com/docs" target="_blank">OpenAI Docs</a>.</div>
+  </div>
+
+  <button id="save">Lưu Cấu Hình</button>
+  <div id="status" class="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>

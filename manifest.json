@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "AI Text Explainer & Chat",
+  "version": "1.0",
+  "description": "Giải thích từ vựng/đoạn văn và chat trực tiếp với AI (Gemini/ChatGPT).",
+  "permissions": [
+    "storage",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.openai.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "action": {
+    "default_popup": "options.html"
+  }
+}
